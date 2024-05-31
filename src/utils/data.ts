@@ -26,4 +26,50 @@ export const Stars = [
     name: "امید مصلایی",
     job: "دبیر درس شیمی",
   },
+
+  {
+    avatarPath: image1,
+    key: "4",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
+
+  {
+    avatarPath: image1,
+    key: "5",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
+
+  {
+    avatarPath: image1,
+    key: "6",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
+
+  {
+    avatarPath: image1,
+    key: "7",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
+  {
+    avatarPath: image1,
+    key: "8",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
+  {
+    avatarPath: image1,
+    key: "9",
+    bgColor: "#0369F4",
+    name: "امید مصلایی",
+    job: "دبیر درس شیمی",
+  },
 ];

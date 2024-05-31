@@ -1,8 +1,10 @@
-import Footer from "@/container/Footer";
 import Header from "@/container/Header";
-import MainSection from "@/container/MainSection";
 import { Box, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
+
+const MainSection = dynamic(() => import("@/container/MainSection"));
+const Footer = dynamic(() => import("@/container/Footer"));
 
 const MainPage: NextPage = () => {
   return (

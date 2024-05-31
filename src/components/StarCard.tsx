@@ -30,7 +30,7 @@ const StarCard: FC<Props & CardProps> = ({
         alt="avatar"
         fill={true}
         style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
+        objectFit="fit"
       />
 
       <VStack
@@ -38,14 +38,35 @@ const StarCard: FC<Props & CardProps> = ({
         left={0}
         right={0}
         bottom={0}
-        h="25%"
+        h="30%"
         color="white"
         justify="center"
         background="#00000070"
         backdropFilter="blur(32px)"
       >
-        <Box fontSize="18px">{fullName}</Box>
-        <Box fontSize="18px" fontWeight="bold">
+        <Box
+          fontSize={{
+            base: "14px",
+            md: "16px",
+            lg: "14px",
+            xl: "16px",
+            "2xl": "18px",
+          }}
+          textAlign="center"
+        >
+          {fullName}
+        </Box>
+        <Box
+          fontSize={{
+            base: "14px",
+            md: "16px",
+            lg: "14px",
+            xl: "16px",
+            "2xl": "18px",
+          }}
+          textAlign="center"
+          fontWeight="bold"
+        >
           {job}
         </Box>
       </VStack>

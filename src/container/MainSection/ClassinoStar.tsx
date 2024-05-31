@@ -1,52 +1,108 @@
 import StarCard from "@/components/StarCard";
-import ChevronLeft from "@/icons/ChevronLeft";
-import ChevronRight from "@/icons/ChevronRight";
+import ChevronLeft from "@/components/icons/ChevronLeft";
+import ChevronRight from "@/components/icons/ChevronRight";
 import { Stars } from "@/utils/data";
-import { Button, Center, HStack, Text, VStack } from "@chakra-ui/react";
-import { FC } from "react";
+import {
+  Box,
+  Button,
+  Center,
+  HStack,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { FC, useCallback, useRef } from "react";
+import { Swiper, SwiperRef, SwiperSlide, useSwiper } from "swiper/react";
+
+import "swiper/css";
 
 const ClassinoStar: FC = () => {
+  const perView = useBreakpointValue({ base: 1, md: 2, xl: 3 });
+  const swiperRef = useRef<SwiperRef>(null);
+
   return (
-    <Center w="100%" mb={12} zIndex='10000'>
-      <HStack
-        w="80%"
+    <Center w="100%" mb={12} zIndex="10000">
+      <Stack
+        direction={{ base: "column", lg: "row" }}
+        w={{ base: "85%", lg: "95%", xl: "80%" }}
+        mx="auto"
         bg="whiteAlpha.100"
-        justify="space-between"
+        justify={{ base: "center", lg: "space-between" }}
         borderRadius="30px"
+        spacing={6}
         py={4}
-        px={24}
+        px={{ base: 2, sm: 4, md: 8, xl: 12, "2xl": 24 }}
         h={400}
         backdropFilter="blur(32px)"
       >
-        <VStack fontSize="48px" color="white" fontWeight="bold">
+        <Stack
+          direction={{ base: "row", lg: "column" }}
+          fontSize={{
+            base: "24px",
+            sm: "28px",
+            md: "32px",
+            lg: "36px",
+            xl: "48px",
+          }}
+          color="white"
+          justify="center"
+          fontWeight="bold"
+        >
           <Text>ستـــــارگان</Text>
 
           <Text>کلاسینـــــو</Text>
-        </VStack>
+        </Stack>
 
-        <HStack alignSelf="stretch">
-          <Button variant="unstyled">
-            <ChevronRight boxSize={10} />
+        <HStack
+          alignSelf="stretch"
+          flex={1}
+          justify="end"
+          overflow="hidden"
+          spacing={{ base: 1, sm: 2, md: 3, lg: 4, xl: 5, "2xl": 6 }}
+        >
+          <Button
+            variant="unstyled"
+            onClick={() => {
+              swiperRef.current?.swiper.slidePrev();
+            }}
+          >
+            <ChevronRight boxSize={{ base: 8, md: 8, lg: 10 }} />
           </Button>
 
-          <HStack h="full" alignItems="stretch">
-            {Stars.map((value) => (
-              <StarCard
-                w={64}
-                key={value.key}
-                bg={value.bgColor}
-                avatar={value.avatarPath}
-                fullName={value.name}
-                job={value.job}
-              />
-            ))}
-          </HStack>
+          <Box w="80%" overflow="hidden" h="full">
+            <Swiper
+              style={{ height: "100%", width: "100%" }}
+              spaceBetween={10}
+              slidesPerView={perView}
+              ref={swiperRef}
+            >
+              {Stars.map((value) => (
+                <SwiperSlide key={value.key} style={{ height: "100%" }}>
+                  <StarCard
+                    as={motion.div}
+                    bg={value.bgColor}
+                    avatar={value.avatarPath}
+                    fullName={value.name}
+                    job={value.job}
+                    flex={1}
+                    height="full"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
 
-          <Button variant="unstyled">
-            <ChevronLeft boxSize={10} />
+          <Button
+            variant="unstyled"
+            onClick={() => {
+              swiperRef.current?.swiper.slideNext();
+            }}
+          >
+            <ChevronLeft boxSize={{ base: 8, md: 8, lg: 10 }} />
           </Button>
         </HStack>
-      </HStack>
+      </Stack>
     </Center>
   );
 };

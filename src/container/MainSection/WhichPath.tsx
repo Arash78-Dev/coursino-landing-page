@@ -1,4 +1,11 @@
-import { HStack, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  HStack,
+  Link,
+  Stack,
+  Text,
+  VStack,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
 import riazi from "../../../public/assets/images/riazi.svg";
@@ -8,21 +15,45 @@ import honar from "../../../public/assets/images/honar.svg";
 import flag from "../../../public/assets/images/flag.svg";
 import car2 from "../../../public/assets/images/car2.svg";
 import BaseButton from "@/components/BaseButton";
-import scrollTo from "@/utils/scrollingToWhere";
 import scrollingToWhere from "@/utils/scrollingToWhere";
 
 const WhichPath: FC = () => {
+  const pathPicture = useBreakpointValue({
+    base: 200,
+    "2xl": 300,
+  });
+
+  const flagPicture = useBreakpointValue({
+    base: 300,
+    md: 300,
+    xl: 400,
+  });
   return (
-    <VStack h="180vh" color="white" spacing={9}>
-      <Text fontSize="48px" fontWeight="bold">
+    <VStack
+      w={{ base: "85%", lg: "95%", xl: "80%" }}
+      mx="auto"
+      color="white"
+      spacing={9}
+    >
+      <Text
+        fontSize={{
+          base: "24px",
+          sm: "28px",
+          md: "32px",
+          lg: "36px",
+          xl: "48px",
+        }}
+        textAlign="center"
+        fontWeight="bold"
+      >
         از کدوم مسیر وارد این رقابت می‌شی؟
       </Text>
 
-      <HStack>
+      <Stack direction={{ base: "column", lg: "row" }}>
         <Image
           src={riazi}
           alt="riazi"
-          width={300}
+          width={pathPicture}
           height={700}
           style={{ zIndex: "100" }}
         />
@@ -30,7 +61,7 @@ const WhichPath: FC = () => {
         <Image
           src={tajrobi}
           alt="tajrobi"
-          width={300}
+          width={pathPicture}
           height={700}
           style={{ zIndex: "100" }}
         />
@@ -38,7 +69,7 @@ const WhichPath: FC = () => {
         <Image
           src={ensani}
           alt="ensani"
-          width={300}
+          width={pathPicture}
           height={700}
           style={{ zIndex: "100" }}
         />
@@ -46,32 +77,74 @@ const WhichPath: FC = () => {
         <Image
           src={honar}
           alt="honar"
-          width={300}
+          width={pathPicture}
           height={700}
           style={{ zIndex: "100" }}
         />
-      </HStack>
+      </Stack>
 
       <VStack spacing="-2px !important">
         <Image
           src={flag}
           alt="flag"
-          width={400}
+          width={flagPicture}
           height={700}
           style={{ zIndex: "100" }}
         />
 
-        <Text fontWeight="bold" fontSize="48px" mt="-30px">
+        <Text
+          fontWeight="bold"
+          fontSize={{
+            base: "24px",
+            sm: "28px",
+            md: "32px",
+            lg: "36px",
+            xl: "48px",
+          }}
+          mt="-30px"
+          textAlign="center"
+        >
           پرچم بالاست!
         </Text>
       </VStack>
 
       <VStack>
-        <Text fontSize="32px">دیوونه بازی یعنی ...</Text>
-        <Text fontSize="42px">
+        <Text
+          fontSize={{
+            base: "16px",
+            sm: "20px",
+            md: "24px",
+            lg: "28px",
+            xl: "32px",
+          }}
+          textAlign="center"
+        >
+          دیوونه بازی یعنی ...
+        </Text>
+        <Text
+          fontSize={{
+            base: "24px",
+            sm: "28px",
+            md: "32px",
+            lg: "36px",
+            xl: "42px",
+          }}
+          textAlign="center"
+        >
           امسال به قیمت پارسال توی دوره ثبت نام می کنی!
         </Text>
-        <Text fontSize="32px">فقط شروع کن</Text>
+        <Text
+          fontSize={{
+            base: "16px",
+            sm: "20px",
+            md: "24px",
+            lg: "28px",
+            xl: "32px",
+          }}
+          textAlign="center"
+        >
+          فقط شروع کن
+        </Text>
       </VStack>
 
       <BaseButton

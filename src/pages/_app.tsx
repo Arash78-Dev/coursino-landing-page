@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendBaseTheme, extendTheme } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
@@ -20,9 +20,19 @@ const GlobalStyle = () => (
   />
 );
 
+const theme = extendTheme({
+  style: {
+    global: {
+      ".swiper-wrapper": {
+        height: "100%",
+      },
+    },
+  },
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <GlobalStyle />
       <main className={iranSansWeb.className}>
         <Component {...pageProps} />

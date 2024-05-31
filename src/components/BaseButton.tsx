@@ -1,4 +1,4 @@
-import ArrowRight from "@/icons/ArrowRight";
+import ArrowRight from "@/components/icons/ArrowRight";
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { FC, PropsWithChildren } from "react";
 
