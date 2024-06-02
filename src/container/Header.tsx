@@ -1,14 +1,28 @@
 import BaseButton from "@/components/BaseButton";
-import { Box, Center, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Link,
+  Text,
+  VStack,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
 import backgroundblue from "../../public/assets/images/backgroundblue.svg";
 import takhtGaz from "../../public/assets/images/takhtGaz.svg";
-import videopicture from "../../public/assets/images/videopicture.svg";
+import videoWebpicture from "../../public/assets/video/Header_Desktop.gif";
+import videoMobilepicture from "../../public/assets/video/Header_Phone.gif";
 import Classino from "@/components/Classino";
 import scrollingToWhere from "@/utils/scrollingToWhere";
+import { motion } from "framer-motion";
 
 const Header: FC = () => {
+  const videoSrc = useBreakpointValue({
+    base: videoMobilepicture,
+    lg: videoWebpicture,
+  });
+
   return (
     <Box
       position="relative"
@@ -22,21 +36,32 @@ const Header: FC = () => {
       w="full"
     >
       <Image
-        src={videopicture}
+        src={videoSrc ?? ""}
         alt="videopicture"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
-        priority={true}
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+          objectFit: "cover",
+        }}
+       
+        unoptimized={true}
       />
 
       <Image
         src={backgroundblue}
-        priority={true}
-        alt="videopicture"
+        alt="backgroundblue"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+          objectFit: "cover",
+        }}
+     
       />
 
       <Classino
@@ -75,13 +100,21 @@ const Header: FC = () => {
           spacing={8}
           w={{ base: 240, sm: 360, md: 480, lg: 600, xl: 740 }}
         >
-          <Image
-            src={takhtGaz}
-            alt="videopicture"
-            width={500}
-            height={500}
+          <motion.div
             style={{ zIndex: "100" }}
-          />
+            initial={{ x: 1500, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          >
+            <Image
+              src={takhtGaz}
+              alt="takhtGaz"
+              width={500}
+              style={{ aspectRatio: 5 / 2 }}
+              quality={10}
+              placeholder="empty"
+            />
+          </motion.div>
 
           <Text
             fontSize={{

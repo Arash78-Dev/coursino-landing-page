@@ -8,9 +8,9 @@ const ChevronRight: FC<IconProps> = ({...props}) => {
       <path
         d="M18.6 16.2L23.4 21L18.6 25.8"
         stroke="#070F1C"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Icon>
   );

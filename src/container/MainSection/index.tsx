@@ -22,9 +22,8 @@ const MainSection: FC = () => {
           left: 0,
           right: 0,
           height: "100%",
+          objectFit: "cover",
         }}
-        objectFit="cover"
-        priority={true}
       />
 
       <RootStory />

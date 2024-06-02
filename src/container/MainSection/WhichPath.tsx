@@ -9,13 +9,18 @@ import {
 import Image from "next/image";
 import { FC } from "react";
 import riazi from "../../../public/assets/images/riazi.svg";
+import riazi_back from "../../../public/assets/images/riazi_back.svg";
 import tajrobi from "../../../public/assets/images/tajrobi.svg";
+import tajrobi_back from "../../../public/assets/images/tajrobi_back.svg";
 import ensani from "../../../public/assets/images/ensani.svg";
+import ensani_back from "../../../public/assets/images/ensani_back.svg";
 import honar from "../../../public/assets/images/honar.svg";
+import honar_back from "../../../public/assets/images/honar_back.svg";
 import flag from "../../../public/assets/images/flag.svg";
 import car2 from "../../../public/assets/images/car2.svg";
 import BaseButton from "@/components/BaseButton";
 import scrollingToWhere from "@/utils/scrollingToWhere";
+import FlipAnimation from "@/components/FlipAnimation";
 
 const WhichPath: FC = () => {
   const pathPicture = useBreakpointValue({
@@ -50,37 +55,17 @@ const WhichPath: FC = () => {
       </Text>
 
       <Stack direction={{ base: "column", lg: "row" }}>
-        <Image
-          src={riazi}
-          alt="riazi"
-          width={pathPicture}
-          height={700}
-          style={{ zIndex: "100" }}
-        />
+        <FlipAnimation frontScr={riazi} backScr={riazi_back} alt="riazi" />
 
-        <Image
-          src={tajrobi}
+        <FlipAnimation
+          frontScr={tajrobi}
+          backScr={tajrobi_back}
           alt="tajrobi"
-          width={pathPicture}
-          height={700}
-          style={{ zIndex: "100" }}
         />
 
-        <Image
-          src={ensani}
-          alt="ensani"
-          width={pathPicture}
-          height={700}
-          style={{ zIndex: "100" }}
-        />
+        <FlipAnimation frontScr={ensani} backScr={ensani_back} alt="ensani" />
 
-        <Image
-          src={honar}
-          alt="honar"
-          width={pathPicture}
-          height={700}
-          style={{ zIndex: "100" }}
-        />
+        <FlipAnimation frontScr={honar} backScr={honar_back} alt="honar" />
       </Stack>
 
       <VStack spacing="-2px !important">

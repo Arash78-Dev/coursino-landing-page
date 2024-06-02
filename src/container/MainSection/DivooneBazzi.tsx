@@ -28,8 +28,8 @@ const DivooneBazzi: FC = () => {
           right: 0,
           height: "100%",
           zIndex: "100",
+          objectFit:"cover"
         }}
-        objectFit="cover"
       />
 
       <VStack

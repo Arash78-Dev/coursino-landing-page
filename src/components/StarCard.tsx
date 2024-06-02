@@ -21,16 +21,14 @@ const StarCard: FC<Props & CardProps> = ({
         src={badgeBg}
         alt="badgeBg"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
+        style={{ position: "absolute", left: 0, right: 0, height: "100%" , objectFit:"cover"}}
       />
 
       <Image
         src={avatar}
         alt="avatar"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="fit"
+        style={{ position: "absolute", left: 0, right: 0, height: "100%" , objectFit:"cover"}}
       />
 
       <VStack

@@ -77,16 +77,26 @@ const Footer: FC = () => {
         src={bg}
         alt="bg"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+          objectFit: "cover",
+        }}
       />
 
       <Image
         src={tiresrc}
         alt="tire"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" }}
-        objectFit="cover"
+        style={{
+          objectFit: "cover",
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+        }}
       />
     </Stack>
   );

@@ -21,9 +21,9 @@ const ChevronLeft: FC<IconProps> = (props) => {
       <path
         d="M23.4 25.8L18.6 21L23.4 16.2"
         stroke="#070F1C"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Icon>
   );

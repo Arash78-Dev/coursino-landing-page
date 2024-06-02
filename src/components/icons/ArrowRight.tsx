@@ -12,9 +12,9 @@ const ArrowRight: FC<IconProps> = ({ ...props }) => {
       <path
         d="M8.83333 7.625L13 12M13 12L8.83333 16.375M13 12L3 12"
         stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Icon>
   );
