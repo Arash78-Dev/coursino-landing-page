@@ -17,7 +17,7 @@ import ensani_back from "../../../public/assets/images/ensani_back.webp";
 import honar from "../../../public/assets/images/honar.webp";
 import honar_back from "../../../public/assets/images/honar_back.webp";
 import flag from "../../../public/assets/images/flag.webp";
-import car2 from "../../../public/assets/images/car2.svg";
+import car2 from "../../../public/assets/images/car2.png";
 import BaseButton from "@/components/BaseButton";
 import scrollingToWhere from "@/utils/scrollingToWhere";
 import FlipAnimation from "@/components/FlipAnimation";
