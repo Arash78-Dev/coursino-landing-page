@@ -1,9 +1,9 @@
-import { Box, Button, Center, HStack, Link, VStack } from "@chakra-ui/react";
+import FleshDown from "@/components/icons/FleshDown";
+import scrollingToWhere from "@/utils/scrollingToWhere";
+import { Box, Button, Center, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import banner from "../../../public/assets/images/banner.svg";
-import scrollingToWhere from "@/utils/scrollingToWhere";
-import FleshDown from "@/components/icons/FleshDown";
+import banner from "../../../public/assets/images/banner.webp";
 
 const DivooneBazzi: FC = () => {
   return (
@@ -28,7 +28,7 @@ const DivooneBazzi: FC = () => {
           right: 0,
           height: "100%",
           zIndex: "100",
-          objectFit:"cover"
+          objectFit: "cover",
         }}
       />
 
@@ -45,7 +45,7 @@ const DivooneBazzi: FC = () => {
         }}
         spacing={1}
         w={{ base: "85%", lg: "95%", xl: "80%" }}
-        mx='auto'
+        mx="auto"
       >
         <Center zIndex="1000" textAlign="center">
           کنکور ۱۴۰۴ قراره بهت هیجان بده.

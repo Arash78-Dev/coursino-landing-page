@@ -1,12 +1,12 @@
-import { Text, VStack, useBreakpointValue } from "@chakra-ui/react";
+import ClassinoStar from "@/container/MainSection/ClassinoStar";
+import DivooneBazzi from "@/container/MainSection/DivooneBazzi";
+import RootStory from "@/container/MainSection/RootStory";
+import WhichPath from "@/container/MainSection/WhichPath";
+import { VStack, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import bg from "../../../public/assets/images/bg-main-section.svg";
-import bgMobile from "../../../public/assets/images/BG (3).svg";
-import RootStory from "@/container/MainSection/RootStory";
-import DivooneBazzi from "@/container/MainSection/DivooneBazzi";
-import WhichPath from "@/container/MainSection/WhichPath";
-import ClassinoStar from "@/container/MainSection/ClassinoStar";
+import bgMobile from "../../../public/assets/images/BG-_3_.webp";
+import bg from "../../../public/assets/images/bg-main-section.webp";
 
 const MainSection: FC = () => {
   const bgSrc = useBreakpointValue({ base: bgMobile, lg: bg });
@@ -14,7 +14,7 @@ const MainSection: FC = () => {
   return (
     <VStack w="full" position="relative" overflow="hidden">
       <Image
-        src={bgSrc}
+        src={bgSrc ?? ""}
         alt="bg"
         fill={true}
         style={{

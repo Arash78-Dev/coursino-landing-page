@@ -10,24 +10,19 @@ import Image from "next/image";
 import { FC } from "react";
 import riazi from "../../../public/assets/images/riazi.svg";
 import riazi_back from "../../../public/assets/images/riazi_back.svg";
-import tajrobi from "../../../public/assets/images/tajrobi.svg";
-import tajrobi_back from "../../../public/assets/images/tajrobi_back.svg";
-import ensani from "../../../public/assets/images/ensani.svg";
-import ensani_back from "../../../public/assets/images/ensani_back.svg";
-import honar from "../../../public/assets/images/honar.svg";
-import honar_back from "../../../public/assets/images/honar_back.svg";
-import flag from "../../../public/assets/images/flag.svg";
+import tajrobi from "../../../public/assets/images/tajrobi.webp";
+import tajrobi_back from "../../../public/assets/images/tajrobi_back.webp";
+import ensani from "../../../public/assets/images/ensani.webp";
+import ensani_back from "../../../public/assets/images/ensani_back.webp";
+import honar from "../../../public/assets/images/honar.webp";
+import honar_back from "../../../public/assets/images/honar_back.webp";
+import flag from "../../../public/assets/images/flag.webp";
 import car2 from "../../../public/assets/images/car2.svg";
 import BaseButton from "@/components/BaseButton";
 import scrollingToWhere from "@/utils/scrollingToWhere";
 import FlipAnimation from "@/components/FlipAnimation";
 
 const WhichPath: FC = () => {
-  const pathPicture = useBreakpointValue({
-    base: 200,
-    "2xl": 300,
-  });
-
   const flagPicture = useBreakpointValue({
     base: 300,
     md: 300,

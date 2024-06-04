@@ -23,13 +23,13 @@ const FlipAnimation: FC<Props> = ({ alt, backScr, frontScr }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       zIndex={100}
-      position='relative'
+      position="relative"
     >
       <Box
         as={motion.div}
         animate={{ rotateY: isHover ? 180 : 0 }}
         style={{ backfaceVisibility: "hidden" }}
-        position='absolute'
+        position="absolute"
       >
         <Image src={frontScr} alt={alt} width={pathPicture} height={700} />
       </Box>
@@ -38,7 +38,6 @@ const FlipAnimation: FC<Props> = ({ alt, backScr, frontScr }) => {
         as={motion.div}
         animate={{ rotateY: isHover ? 0 : 180 }}
         style={{ backfaceVisibility: "hidden" }}
-      
       >
         <Image src={backScr} alt={alt} width={pathPicture} height={700} />
       </Box>

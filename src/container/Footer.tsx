@@ -8,10 +8,10 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import bg from "../../public/assets/images/bg-main-section1.svg";
-import tire from "../../public/assets/images/tire.svg";
-import tiremobile from "../../public/assets/images/tiremobile.svg";
-import logo from "../../public/assets/images/logo.svg";
+import bg from "../../public/assets/images/bg-main-section1.webp";
+import tire from "../../public/assets/images/tire.webp";
+import tiremobile from "../../public/assets/images/tiremobile.webp";
+import logo from "../../public/assets/images/logo.webp";
 import Image from "next/image";
 import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
@@ -65,7 +65,6 @@ const Footer: FC = () => {
         zIndex="1000"
         spacing={4}
       >
-        <BaseInput id="input-full-name" placeholder="نام و نام خانوادگی" />
         <BaseInput placeholder="شماره موبایل" />
 
         <BaseButton alignSelf={{ base: "center", lg: "end" }}>
@@ -87,7 +86,7 @@ const Footer: FC = () => {
       />
 
       <Image
-        src={tiresrc}
+        src={tiresrc ?? ''}
         alt="tire"
         fill={true}
         style={{

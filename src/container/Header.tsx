@@ -1,21 +1,19 @@
 import BaseButton from "@/components/BaseButton";
+import Classino from "@/components/Classino";
+import scrollingToWhere from "@/utils/scrollingToWhere";
 import {
   Box,
   Center,
-  Link,
   Text,
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import backgroundblue from "../../public/assets/images/backgroundblue.svg";
-import takhtGaz from "../../public/assets/images/takhtGaz.svg";
+import backgroundblue from "../../public/assets/images/backgroundblue.webp";
+import takhtGaz from "../../public/assets/images/takhtGaz (1).webp";
 import videoWebpicture from "../../public/assets/video/Header_Desktop.gif";
 import videoMobilepicture from "../../public/assets/video/Header_Phone.gif";
-import Classino from "@/components/Classino";
-import scrollingToWhere from "@/utils/scrollingToWhere";
-import { motion } from "framer-motion";
 
 const Header: FC = () => {
   const videoSrc = useBreakpointValue({
@@ -46,7 +44,10 @@ const Header: FC = () => {
           height: "100%",
           objectFit: "cover",
         }}
-       
+        fetchPriority="high"
+        priority={true}
+        placeholder="empty"
+        quality={10}
         unoptimized={true}
       />
 
@@ -54,6 +55,10 @@ const Header: FC = () => {
         src={backgroundblue}
         alt="backgroundblue"
         fill={true}
+        priority={true}
+        fetchPriority="high"
+        quality={1}
+        placeholder="empty"
         style={{
           position: "absolute",
           left: 0,
@@ -61,7 +66,6 @@ const Header: FC = () => {
           height: "100%",
           objectFit: "cover",
         }}
-     
       />
 
       <Classino
@@ -100,21 +104,16 @@ const Header: FC = () => {
           spacing={8}
           w={{ base: 240, sm: 360, md: 480, lg: 600, xl: 740 }}
         >
-          <motion.div
-            style={{ zIndex: "100" }}
-            initial={{ x: 1500, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          >
-            <Image
-              src={takhtGaz}
-              alt="takhtGaz"
-              width={500}
-              style={{ aspectRatio: 5 / 2 }}
-              quality={10}
-              placeholder="empty"
-            />
-          </motion.div>
+          <Image
+            src={takhtGaz}
+            alt="takhtGaz"
+            width={500}
+            style={{ aspectRatio: 5 / 2, zIndex: 100 }}
+            quality={1}
+            placeholder="empty"
+            priority={true}
+            fetchPriority="high"
+          />
 
           <Text
             fontSize={{

@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import car from "../../../public/assets/images/car.svg";
+import car from "../../../public/assets/images/car.webp";
 
 const RootStory: FC = () => {
   const carImageSize = useBreakpointValue({

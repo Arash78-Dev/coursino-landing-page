@@ -2,9 +2,10 @@ import { Box, Card, CardProps, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 import badgeBg from "../../public/assets/images/badgeBg.svg";
 import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Props {
-  avatar: string;
+  avatar: string | StaticImport;
   fullName: string;
   job: string;
 }
@@ -21,14 +22,27 @@ const StarCard: FC<Props & CardProps> = ({
         src={badgeBg}
         alt="badgeBg"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" , objectFit:"cover"}}
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+          objectFit: "cover",
+        }}
       />
 
       <Image
         src={avatar}
         alt="avatar"
         fill={true}
-        style={{ position: "absolute", left: 0, right: 0, height: "100%" , objectFit:"cover"}}
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          height: "100%",
+          objectFit: "contain",
+        }}
+        quality={100}
       />
 
       <VStack
