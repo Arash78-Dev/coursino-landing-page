@@ -26,15 +26,14 @@ const ClassinoStar: FC = () => {
       if (
         swiperRef.current?.swiper.activeIndex ===
         Stars.length - (perView ?? 0)
-      )
-        {
-          swiperRef.current.swiper.slideTo(0)
-        }
+      ) {
+        swiperRef.current.swiper.slideTo(0);
+      }
       swiperRef.current?.swiper.slideNext();
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [perView]);
 
   return (
     <Center w="100%" mb={12} zIndex="10000">
