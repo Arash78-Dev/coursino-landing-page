@@ -12,14 +12,29 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FC, useCallback, useRef } from "react";
-import { Swiper, SwiperRef, SwiperSlide, useSwiper } from "swiper/react";
+import { FC, useEffect, useRef } from "react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
 const ClassinoStar: FC = () => {
   const perView = useBreakpointValue({ base: 1, md: 2, xl: 3 });
   const swiperRef = useRef<SwiperRef>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (
+        swiperRef.current?.swiper.activeIndex ===
+        Stars.length - (perView ?? 0)
+      )
+        {
+          swiperRef.current.swiper.slideTo(0)
+        }
+      swiperRef.current?.swiper.slideNext();
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Center w="100%" mb={12} zIndex="10000">
