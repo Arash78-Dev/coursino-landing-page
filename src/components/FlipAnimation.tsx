@@ -27,19 +27,19 @@ const FlipAnimation: FC<Props> = ({ alt, backScr, frontScr }) => {
     >
       <Box
         as={motion.div}
-        animate={{ rotateY: isHover ? 180 : 0 }}
+        animate={{ rotateY: isHover ? 180 : 0.1 }}
         style={{ backfaceVisibility: "hidden" }}
         position="absolute"
       >
-        <Image src={frontScr} alt={alt} width={pathPicture} height={700} />
+        <Image src={frontScr} alt={alt} width={pathPicture} />
       </Box>
 
       <Box
         as={motion.div}
-        animate={{ rotateY: isHover ? 0 : 180 }}
+        animate={{ rotateY: isHover ? 0.1 : 180 }}
         style={{ backfaceVisibility: "hidden" }}
       >
-        <Image src={backScr} alt={alt} width={pathPicture} height={700} />
+        <Image src={backScr} alt={alt} width={pathPicture} />
       </Box>
     </Box>
   );

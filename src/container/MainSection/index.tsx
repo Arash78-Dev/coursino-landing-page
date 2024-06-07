@@ -24,6 +24,7 @@ const MainSection: FC = () => {
           height: "100%",
           objectFit: "cover",
         }}
+        quality={10}
       />
 
       <RootStory />

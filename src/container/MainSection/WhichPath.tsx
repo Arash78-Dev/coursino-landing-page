@@ -8,8 +8,8 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import riazi from "../../../public/assets/images/riazi.svg";
-import riazi_back from "../../../public/assets/images/riazi_back.svg";
+import riazi from "../../../public/assets/images/riazi.png";
+import riazi_back from "../../../public/assets/images/riazi_back.png";
 import tajrobi from "../../../public/assets/images/tajrobi.webp";
 import tajrobi_back from "../../../public/assets/images/tajrobi_back.webp";
 import ensani from "../../../public/assets/images/ensani.webp";
