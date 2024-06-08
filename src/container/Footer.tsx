@@ -23,8 +23,9 @@ import { useRouter } from "next/router";
 interface Request {
   phone: string;
   landing_name: string;
-  utm_source: string;
-  utm_medium: string;
+  utm_source?: string;
+  utm_medium?: string;
+  gclid?: string;
 }
 
 const url = "https://book.classino.com/api/landing";
@@ -51,8 +52,9 @@ const Footer: FC = () => {
 
     const data: Request = {
       landing_name: "jame1404",
-      utm_medium: (query.utm_medium as string) ?? "",
-      utm_source: (query.utm_source as string) ?? "",
+      utm_medium: query.utm_medium as string | undefined,
+      utm_source: query.utm_source as string | undefined,
+      gclid: query.gclid as string | undefined,
       phone: phone,
     };
 
